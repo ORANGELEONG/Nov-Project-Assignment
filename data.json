@@ -1,17 +1,22 @@
 [
     {
-      "name": "Laptop",
-      "price": 1200,
-      "date": "2024-11-01"
+      "name": "iPhone 17 Pro Max 1TB",
+      "price": 2599,
+      "date": "2025-09-08"
     },
     {
-      "name": "Headphones",
-      "price": 150,
-      "date": "2024-11-10"
+      "name": "BYD 8 Seater MPV ",
+      "price": 259999,
+      "date": "2024-12-08"
     },
     {
-      "name": "Keyboard",
-      "price": 75,
-      "date": "2024-11-15"
-    }
+      "name": "1st Private Property 5-Bedded Condo @ Sengkang ",
+      "price": 3200000,
+      "date": "2024-12-08"
+    },
+    {
+        "name": "2nd Private Property 4-Bedded Condo @ Hougang ",
+        "price": 2500000,
+        "date": "2024-12-08"
+      }
   ]
