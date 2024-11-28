@@ -1,6 +1,19 @@
 // Array to store items
 let items = [];
 
+// Load initial data using fetch
+async function loadInitialData() {
+  try {
+    const response = await fetch('data.json');
+    if (!response.ok) throw new Error('Failed to fetch data.');
+    const data = await response.json();
+    items = data;
+    updateTable();
+  } catch (error) {
+    console.error('Error loading data:', error);
+  }
+}
+
 // Add event listener for form submission
 document.getElementById('shopping-form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -63,3 +76,6 @@ function editItem(index) {
   // Remove the item from the array and update the table
   deleteItem(index);
 }
+
+// Load initial data on page load
+loadInitialData();

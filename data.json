@@ -8,5 +8,10 @@
       "name": "Headphones",
       "price": 150,
       "date": "2024-11-10"
+    },
+    {
+      "name": "Keyboard",
+      "price": 75,
+      "date": "2024-11-15"
     }
   ]
