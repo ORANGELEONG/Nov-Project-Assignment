@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Laptop",
+      "price": 1200,
+      "date": "2024-11-01"
+    },
+    {
+      "name": "Headphones",
+      "price": 150,
+      "date": "2024-11-10"
+    }
+  ]
