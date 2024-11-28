@@ -60,6 +60,27 @@ function updateTable() {
   });
 }
 
+function handleSortFilter(key) {
+    const priceSortValue = document.getElementById('price-sort').value;
+    const dateSortValue = document.getElementById('date-sort').value;
+  
+    if (key === 'price') {
+      if (priceSortValue === 'high-to-low') {
+        items.sort((a, b) => b.price - a.price);
+      } else if (priceSortValue === 'low-to-high') {
+        items.sort((a, b) => a.price - b.price);
+      }
+    } else if (key === 'date') {
+      if (dateSortValue === 'earliest-to-latest') {
+        items.sort((a, b) => new Date(a.date) - new Date(b.date));
+      } else if (dateSortValue === 'latest-to-earliest') {
+        items.sort((a, b) => new Date(b.date) - new Date(a.date));
+      }
+    }
+  
+    updateTable();
+  }
+
 // Function to delete an item
 function deleteItem(index) {
   items.splice(index, 1);
@@ -76,6 +97,8 @@ function editItem(index) {
   // Remove the item from the array and update the table
   deleteItem(index);
 }
+
+
 
 // Load initial data on page load
 loadInitialData();
