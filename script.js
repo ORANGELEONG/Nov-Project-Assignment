@@ -1,22 +1,3 @@
-
-
-// Function to fetch and display a random quote
-async function fetchRandomQuote() {
-  try {
-      const response = await fetch("https://api.quotable.io/random");
-      const data = await response.json();
-      // Update the quote element
-      document.getElementById("quote").innerHTML = `"${data.content}" - <em>${data.author}</em>`;
-  } catch (error) {
-      console.error("Error fetching quote:", error);
-      document.getElementById("quote").innerHTML = "Could not load quote. Please try again later.";
-  }
-}
-
-// Call the function to fetch a quote on page load
-fetchRandomQuote();
-
-
 // Array to store items
 let items = [];
 
