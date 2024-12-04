@@ -106,12 +106,23 @@ loadInitialData();
 const quoteElement = document.getElementById('quote');
 const quoteButton = document.getElementById('new-quote');
 
+// Replace 'YOUR_API_KEY' with your actual API key from API Ninjas
+const apiKey = 'YOUR_API_KEY'; // Your API key here
+
 async function fetchRandomQuote() {
   try {
-    const response = await fetch('https://api.api-ninjas.com/v1/quotes');
+    const response = await fetch('https://api.api-ninjas.com/v1/quotes', {
+      method: 'GET',
+      headers: {
+        'X-Api-Key': 'NKC6yp1P9o/ePc7z0IDREQ==xZByUHWQ4BkKuNfp' // Your actual API key
+      }
+    });
+
     if (!response.ok) throw new Error('Failed to fetch quote.');
     const data = await response.json();
-    quoteElement.textContent = `"${data.content}" — ${data.author}`;
+    
+    // Display the quote and author
+    quoteElement.textContent = `"${data[0].quote}" — ${data[0].author}`;
   } catch (error) {
     console.error('Error fetching quote:', error);
     quoteElement.textContent = 'Unable to load quote at the moment.';
@@ -121,5 +132,5 @@ async function fetchRandomQuote() {
 // Fetch a random quote when the page loads
 fetchRandomQuote();
 
-// Add event listener for button click
+// Add event listener for button click to fetch a new quote
 quoteButton.addEventListener('click', fetchRandomQuote);
