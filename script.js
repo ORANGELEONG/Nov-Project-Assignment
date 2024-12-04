@@ -1,4 +1,5 @@
-// Array to store items
+// Your existing shopping tracker code
+
 let items = [];
 
 // Load initial data using fetch
@@ -61,28 +62,25 @@ function updateTable() {
 }
 
 function handleSortFilter(key) {
-    const priceSortValue = document.getElementById('price-sort').value;
-    const dateSortValue = document.getElementById('date-sort').value;
-  
-    if (key === 'price') {
-      if (priceSortValue === 'high-to-low') {
-        items.sort((a, b) => b.price - a.price);
-      } else if (priceSortValue === 'low-to-high') {
-        items.sort((a, b) => a.price - b.price);
-      }
-    } else if (key === 'date') {
-      if (dateSortValue === 'earliest-to-latest') {
-        items.sort((a, b) => new Date(a.date) - new Date(b.date));
-      } else if (dateSortValue === 'latest-to-earliest') {
-        items.sort((a, b) => new Date(b.date) - new Date(a.date));
-      }
+  const priceSortValue = document.getElementById('price-sort').value;
+  const dateSortValue = document.getElementById('date-sort').value;
+
+  if (key === 'price') {
+    if (priceSortValue === 'high-to-low') {
+      items.sort((a, b) => b.price - a.price);
+    } else if (priceSortValue === 'low-to-high') {
+      items.sort((a, b) => a.price - b.price);
     }
-  
-    updateTable();
+  } else if (key === 'date') {
+    if (dateSortValue === 'earliest-to-latest') {
+      items.sort((a, b) => new Date(a.date) - new Date(b.date));
+    } else if (dateSortValue === 'latest-to-earliest') {
+      items.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
   }
 
-
-  
+  updateTable();
+}
 
 // Function to delete an item
 function deleteItem(index) {
@@ -96,15 +94,32 @@ function editItem(index) {
   document.getElementById('itemName').value = item.name;
   document.getElementById('itemPrice').value = item.price;
   document.getElementById('purchaseDate').value = item.date;
-}
 
   // Remove the item from the array and update the table
   deleteItem(index);
-
-
-
+}
 
 // Load initial data on page load
 loadInitialData();
 
+// Random Quote API Integration
+const quoteElement = document.getElementById('quote');
+const quoteButton = document.getElementById('new-quote');
 
+async function fetchRandomQuote() {
+  try {
+    const response = await fetch('https://api.quotable.io/random');
+    if (!response.ok) throw new Error('Failed to fetch quote.');
+    const data = await response.json();
+    quoteElement.textContent = `"${data.content}" — ${data.author}`;
+  } catch (error) {
+    console.error('Error fetching quote:', error);
+    quoteElement.textContent = 'Unable to load quote at the moment.';
+  }
+}
+
+// Fetch a random quote when the page loads
+fetchRandomQuote();
+
+// Add event listener for button click
+quoteButton.addEventListener('click', fetchRandomQuote);
