@@ -19,20 +19,29 @@
   },
 
   {
-    "name": "BYD 8 Seater MPV ",
-    "price": 259999,
+    "name": "BYD Denza D9 7-Seater MPV ",
+    "price": 299999,
     "date": "2024-12-08"
   },
+
   {
     "name": "1st Private Property 5-Bedded Condo @ Sengkang ",
     "price": 3200000,
     "date": "2024-12-08"
   },
+
   {
       "name": "2nd Private Property 4-Bedded Condo @ Hougang ",
       "price": 2500000,
       "date": "2025-03-19"
     },
+
+    {
+      "name": "XPENG X9 FWD Long-Range 7-Seater MPV",
+      "price": 350000,
+      "date": "2025-03-19"
+   },
+   
     {
       "name": "iPhone 17 Pro Max 1TB",
       "price": 2599,

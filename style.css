@@ -29,7 +29,7 @@ h1 {
 }
 
 #quote {
-  background-color: #e9ecef;
+  background-color: #7eb7f0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -49,5 +49,5 @@ h1 {
 }
 
 #new-quote:hover {
-  background-color: #155724;
+  background-color: #f66dc6;
 }
